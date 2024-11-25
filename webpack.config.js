@@ -5,10 +5,14 @@ const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const config = {
+  mode: "development",
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].js",
+  },
+  devServer: {
+    static: "./dist",
   },
   module: {
     rules: [
@@ -42,9 +46,17 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       templateContent: ({ htmlWebpackPlugin }) =>
-        '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' +
-        htmlWebpackPlugin.options.title +
-        '</title></head><body><div id="app"></div></body></html>',
+        `<!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>${htmlWebpackPlugin.options.title}</title>
+            </head>
+            <body>
+              <div id="app"></div>
+            </body>
+          </html>`,
       filename: "index.html",
     }),
     new BundleAnalyzerPlugin({
@@ -54,6 +66,9 @@ const config = {
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+  },
+  optimization: {
+    runtimeChunk: "single",
   },
 };
 

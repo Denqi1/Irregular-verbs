@@ -7,9 +7,9 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Denqi1",
   "license": "ISC",
-  "description": "",
+  "description": "For learn irregular verbs in English language",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

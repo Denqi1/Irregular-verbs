@@ -4,9 +4,9 @@ import { Route } from "react-router";
 import App from "./app";
 import AppRoutes from "./app-routes";
 
-const root = document.getElementById("app");
+const root = createRoot(document.getElementById("app")!);
 
-createRoot(root!).render(
+root.render(
   <AppRoutes>
     <Route
       index

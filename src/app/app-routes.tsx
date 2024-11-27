@@ -1,6 +1,4 @@
-import { BrowserRouter, Route, Routes, RoutesProps } from "react-router";
-import App from "./app";
-import { ReactElement, ReactNode } from "react";
+import { BrowserRouter, Routes, RoutesProps } from "react-router";
 
 const AppRoutes = (props: RoutesProps) => {
   const { children } = props;

@@ -70,6 +70,9 @@ const config = {
   optimization: {
     runtimeChunk: "single",
   },
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
 module.exports = config;
